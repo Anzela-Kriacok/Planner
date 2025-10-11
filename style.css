@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+body {
+    font-family: "Roboto Slab", serif;
+    margin: 0;
+    height: 100vh;
+    background: #f0f0f0;
+    display: flex;
+}
+
+.days {
+    width: 220px;
+    background: #96a78d;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    color: #ffffff;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15);
+}
+
+.day {
+    padding: 12px;
+    margin: 6px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    background: #b6ceb4;
+    transition: 0.3s;
+}
+
+.day:hover {
+    background: #d9e9cf;
+    color: #333333;
+    transform: scale(1.03);
+}
+
+.day.active{
+    background: #ffffff;
+    color: #333333;
+    font-weight: bold;
+    box-shadow: inset  0 0 rgba(0, 0, 0, 0.2);
+}
