@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Планер</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <main>
-        <div class = "days">
-            <div class = "day active" data-day="Понеділок">Понеділок</div>
-            <div class = "day" data-day="Вівторок">Вівторок</div>
-            <div class = "day" data-day="Середа">Середа</div>
-            <div class = "day" data-day="Четвер">Четвер</div>
-            <div class = "day" data-day="П'ятниця">П'ятниця</div>
-            <div class = "day" data-day="Субота">Субота</div>
-            <div class = "day" data-day="Неділя">Неділя</div>
+
+    <div class="days">
+        <div class="day active" data-day="Понеділок">Понеділок</div>
+        <div class="day" data-day="Вівторок">Вівторок</div>
+        <div class="day" data-day="Середа">Середа</div>
+        <div class="day" data-day="Четвер">Четвер</div>
+        <div class="day" data-day="П'ятниця">П'ятниця</div>
+        <div class="day" data-day="Субота">Субота</div>
+        <div class="day" data-day="Неділя">Неділя</div>
+    </div>
+    <div class="content">
+        <h2 id="day-title">Понеділок</h2>
+        <div class="task-input">
+            <input type="text" id="task-text" placeholder="Введіть завдання">
+            <button id="add-task">Додати завдання</button>
         </div>
-        <div class = "content">
-            <h2 id = "day-title">Понеділок</h2>
-            <div class = "task-input">
-                <input type="text" id = "task-text" placeholder="Введіть завдання"> 
-                <button id = "add-task">Додати завдання</button>
-            </div>
-            <ul id="task-list"></ul>
-        </div>
-    </main>
+        <ul id="task-list"></ul>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
