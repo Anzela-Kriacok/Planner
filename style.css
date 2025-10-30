@@ -1,125 +1,142 @@
+/* Підключаємо зовнішній шрифт 'Roboto Slab' з Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
+/* --- Загальні стилі для всієї сторінки --- */
 body {
-    font-family: "Roboto Slab", serif;
-    margin: 0;
-    height: 100vh;
-    background: #f0f0f0;
-    display: flex;
+    font-family: "Roboto Slab", serif; /* Встановлюємо завантажений шрифт як основний */
+    margin: 0; /* Прибираємо відступи браузера за замовчуванням */
+    height: 100vh; /* Робимо тіло сторінки висотою 100% екрану (vh = viewport height) */
+    background: #f0f0f0; /* Світло-сірий фон */
+    display: flex; /* Використовуємо Flexbox для розміщення .days і .content поруч */
+    /* flex-direction: row; (це значення за замовчуванням) */
 }
 
+/* --- Стилі для бічної панелі (списку днів) --- */
 .days {
-    width: 220px;
-    background: #96a78d;
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    color: #ffffff;
-    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15);
+    width: 220px; /* Фіксована ширина панелі */
+    background: #96a78d; /* Зеленуватий фон */
+    display: flex; /* Використовуємо Flexbox для елементів всередині */
+    flex-direction: column; /* Розміщуємо дні один під одним (у стовпчик) */
+    padding: 15px; /* Внутрішні відступи */
+    color: #ffffff; /* Колір тексту (для заголовків, якщо б вони були) */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15); /* Тінь праворуч від панелі */
 }
 
+/* --- Стилі для кожної кнопки-дня --- */
 .day {
-    padding: 12px;
-    margin: 6px 0;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-    background: #b6ceb4;
-    transition: 0.3s;
+    padding: 12px; /* Внутрішні відступи */
+    margin: 6px 0; /* Зовнішні відступи (зверху/знизу) */
+    cursor: pointer; /* Змінює курсор на "руку" при наведенні */
+    border-radius: 5px; /* Заокруглені кути */
+    text-align: center; /* Текст по центру */
+    background: #b6ceb4; /* Світліший зелений фон */
+    transition: 0.3s; /* Плавний перехід для анімацій (hover) */
 }
 
+/* Стиль .day при наведенні мишки */
 .day:hover {
-    background: #d9e9cf;
-    color: #333333;
-    transform: scale(1.03);
+    background: #d9e9cf; /* Ще світліший фон */
+    color: #333333; /* Темний колір тексту */
+    transform: scale(1.03); /* Злегка збільшуємо кнопку */
 }
 
-.day.active{
-    background: #ffffff;
-    color: #333333;
-    font-weight: bold;
-    box-shadow: inset  0 0 rgba(0, 0, 0, 0.2);
+/* Стиль для *активного* дня (той, який має клас .active) */
+.day.active {
+    background: #ffffff; /* Білий фон */
+    color: #333333; /* Темний колір тексту */
+    font-weight: bold; /* Жирний шрифт */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Внутрішня тінь */
 }
 
-.content{
-    flex:1;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
+/* --- Стилі для основного блоку (контенту) --- */
+.content {
+    flex: 1; /* Займає весь вільний простір праворуч від .days */
+    padding: 30px; /* Великі внутрішні відступи */
+    display: flex; /* Використовуємо Flexbox... */
+    flex-direction: column; /* ...щоб елементи йшли у стовпчик */
 }
 
-h2{
+/* Заголовок (H2) з назвою дня */
+h2 {
     font-size: 28px;
-    color: #444444;
-    margin: 0 0 20px 0 ;
+    color: #444444; /* Темно-сірий колір */
+    margin: 0 0 20px 0; /* Відступ тільки знизу */
 }
 
-.task-input{
-    display: flex;
-    margin-bottom: 20px;
+/* --- Стилі для блоку вводу задачі --- */
+.task-input {
+    display: flex; /* Розміщуємо поле вводу та кнопку в один рядок */
+    margin-bottom: 20px; /* Відступ знизу */
 }
 
-.task-input input{
-    flex: 1;
+/* Поле вводу тексту */
+.task-input input {
+    flex: 1; /* Поле займає весь вільний простір у рядку */
     padding: 12px;
-    border: 1px solid #cccccc;
+    border: 1px solid #cccccc; /* Сіра рамка */
     border-radius: 10px;
     font-size: 16px;
-    outline: none;
-    transition: 0.2s border;
+    outline: none; /* Прибираємо стандартну рамку при фокусі */
+    transition: 0.2s border; /* Плавна зміна кольору рамки */
 }
 
-.task-input input:focus{
-    border: 1px solid #96a78d;
+/* Стиль поля вводу, коли на ньому фокус (клікнули) */
+.task-input input:focus {
+    border: 1px solid #96a78d; /* Рамка стає зеленою */
 }
 
-.task-input button{
-    margin-left: 10px;
+/* Кнопка "Додати завдання" */
+.task-input button {
+    margin-left: 10px; /* Відступ зліва від поля вводу */
     padding: 12px 20px;
-    background: #96a78d;
-    border: none;
-    border-radius:10;
-    color: #ffffff;
+    background: #96a78d; /* Зелений фон */
+    border: none; /* Без рамки */
+    border-radius: 10px;
+    color: #ffffff; /* Білий текст */
     font-size: 16px;
     cursor: pointer;
-    font-weight: 500;
-    transition: 0.3s;
+    font-weight: 500; /* Напівжирний шрифт */
+    transition: 0.3s; /* Плавна зміна фону */
 }
 
-.task-input button:hover{
-    background: #b6ceb4;
+.task-input button:hover {
+    background: #b6ceb4; /* Світліший фон при наведенні */
 }
 
-ul{
-    list-style: none;
-    padding: 0;
+/* --- Стилі для списку завдань --- */
+ul {
+    list-style: none; /* Прибираємо стандартні маркери списку (крапки) */
+    padding: 0; /* Прибираємо відступи за замовчуванням */
 }
 
-li{
-    background: #ffffff;
-    margin: 15px 0;
+/* Стиль для кожного елемента списку (задачі) <li> */
+li {
+    background: #ffffff; /* Білий фон */
+    margin: 15px 0; /* Відступи між задачами */
     padding: 15px;
     border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: 0.2s transform;
+    display: flex; /* Використовуємо Flexbox */
+    justify-content: space-between; /* Текст зліва, кнопки справа */
+    align-items: center; /* Вирівнюємо по центру по вертикалі */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Легка тінь */
+    transition: 0.2s transform; /* Плавна анімація */
 }
 
-li:hover{
-    transform: scale(1.02);
+li:hover {
+    transform: scale(1.02); /* Злегка збільшуємо при наведенні */
 }
 
-li input{
-    flex: 1;
-    margin-right: 10px;
+/* Стилі для поля вводу (input) та кнопок (button) *всередині* <li> */
+/* (Вони з'являються в режимі редагування) */
+li input {
+    flex: 1; /* Займає весь вільний простір */
+    margin-right: 10px; /* Відступ від кнопки "Зберегти" */
     padding: 6px;
     font-size: 14px;
 }
 
-li button{
-    margin-left: 5px;
+li button {
+    margin-left: 5px; /* Невеликий відступ між кнопками ("Зберегти", "Редагувати", "Видалити") */
     background: #96a78d;
     border: none;
     border-radius: 5px;
@@ -130,31 +147,36 @@ li button{
     transition: 0.3s;
 }
 
-li button:hover{
+li button:hover {
     background: #b6ceb4;
 }
 
-@media (max-width:768px){
-    body{
-        flex-direction: column;
+/* --- Адаптивність (для мобільних пристроїв) --- */
+
+/* Ці стилі застосовуються, якщо ширина екрану 768px або менше */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Змінюємо напрямок flex: панель днів *над* контентом */
     }
 
-    .days{
-        flex-direction: row;
-        width: 100%;
-        overflow-x: auto;
-        box-shadow: none;
-    }
-    .day{
-        flex: 1;
-        margin: 5px; 
-        font-size: 14px;
+    .days {
+        flex-direction: row; /* Дні тепер розташовані в рядок */
+        width: 100%; /* Панель днів займає всю ширину */
+        overflow-x: auto; /* Дозволяє прокручувати дні по горизонталі, якщо не вміщаються */
+        box-shadow: none; /* Прибираємо тінь */
     }
 
-    .content{
-        padding: 15px;
+    .day {
+        flex: 1; /* Кожен день намагається зайняти рівну частину ширини */
+        margin: 5px;
+        font-size: 14px; /* Трохи менший шрифт */
     }
-    h2{
-        font-size: 20px;
+
+    .content {
+        padding: 15px; /* Менші відступи на мобільному */
+    }
+
+    h2 {
+        font-size: 20px; /* Менший заголовок */
     }
 }
